@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-    
-<head>
-    <title>Projects</title>
-</head>
+@extends('layout')
 
-<body>
+@section('content')
+
     <h1>Create a new project</h1>
 
     <form method="POST" action="/projects">
@@ -13,11 +9,11 @@
         {{ csrf_field() }}
 
     <div>
-    <input type="text" name="title" class="{{ $errors->has('title') ? 'is-danger' : '' }}" placeholder="Project title">
+    <input type="text" name="title" class="{{ $errors->has('title') ? 'is-danger' : '' }}" placeholder="Project title" value="{{ old('title') }}" required>
     </div>
 
     <div>
-        <textarea name="description" placeholder="Project description" id="" cols="30" rows="10" required></textarea>
+        <textarea name="description" placeholder="Project description" id="" cols="30" rows="10" required>{{ old('description') }}</textarea>
     </div>
 
     <div>
@@ -38,5 +34,4 @@
     </div>
   @endif
 
-</body>
-</html>
+  @endsection

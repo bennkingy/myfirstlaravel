@@ -6,6 +6,9 @@
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+        <link href="{{ asset('css/app.css') }}" media="all" rel="stylesheet" type="text/css" />
+        <!-- <script type="text/javascript" src="{{ asset('js/app.min.js') }}"></script> -->      
 
         <title>@yield('title', 'Home')</title>
 

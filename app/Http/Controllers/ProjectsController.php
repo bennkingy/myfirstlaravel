@@ -24,12 +24,16 @@ class ProjectsController extends Controller
     {
         request()->validate([
 
-            'title' => 'required',
-            'description' => 'required'
+            $attributes = request()->validate([
+
+                'title' => ['required', 'min:3', 'max:255'],
+                'description' => 'required'
+
+            ])
 
         ]);
         
-        Project::create(request(['title', 'description']));
+        Project::create(request($attributes));
     
         return redirect('/projects');
     }

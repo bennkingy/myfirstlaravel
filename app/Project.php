@@ -10,6 +10,6 @@ class Project extends Model
     //     'title',
     //     'description'
     // ];
-
+    
     protected $guarded = [];
 }
