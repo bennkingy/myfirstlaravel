@@ -5,7 +5,7 @@
 <h1>{{ $project->title }} : Project</h1>
 
 <p>
-<a href="/projects/{{ $project->id }}/edit">Edit</a>
+    <a href="/projects/{{ $project->id }}/edit">Edit</a>
 </p>
 
 @if ($project->tasks->count())
@@ -22,9 +22,9 @@
 
                 @csrf
 
-                <label for="completed">
+                <label for="completed" class="{{ $task->completed ? 'is-completed' : '' }}">
 
-                    <input type="checkbox" name="completed" onChange="this.form.submit()">
+                    <input type="checkbox" name="completed" onChange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
 
                     {{ $task->description }}
                     

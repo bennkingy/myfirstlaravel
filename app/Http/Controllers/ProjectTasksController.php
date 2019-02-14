@@ -8,8 +8,12 @@ use App\Task;
 
 class ProjectTasksController extends Controller
 {
-    public function update()
+    public function update(Task $task)
     {
-        dd('foo');
+        $task->update([
+            'completed' => request()->has('completed')
+        ]);
+
+        return back();
     }
 }
