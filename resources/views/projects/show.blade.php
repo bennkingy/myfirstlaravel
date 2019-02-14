@@ -38,4 +38,25 @@
 
 @endif
 
+<h3>Add Task</h3>
+<div>
+            
+    <form method="POST" action="/tasks/{{ $task->id }}">
+
+        @method('POST')
+
+        @csrf
+
+        <label for="completed" class="{{ $task->completed ? 'is-completed' : '' }}">
+
+            <input type="checkbox" name="completed" onChange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
+
+            {{ $task->description }}
+            
+        </label>
+
+    </form>
+
+</div>
+
 @endsection
