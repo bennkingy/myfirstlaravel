@@ -39,7 +39,7 @@ Route::get('/contact', 'PagesController@contact');
 
 Route::resource('/projects', 'ProjectsController');
 
-Route::patch('/tasks/{$task}', 'ProjectTasksController@update');
+Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 
 // /* GET /projects (index) */
 // Route::get('/projects', 'ProjectsController@index');
