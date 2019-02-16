@@ -16,11 +16,15 @@
  
         <div>
             
-            <form method="POST" action="/tasks/{{ $task->id }}">
-
-                @method('PATCH')
+            <form method="POST" action="/completed-tasks/{{ $task->id }}">
 
                 @csrf
+
+                @if ($task->completed) 
+
+                    @method('DELETE')
+
+                @endif
 
                 <label for="completed" class="{{ $task->completed ? 'is-completed' : '' }}">
 
