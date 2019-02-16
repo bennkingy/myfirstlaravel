@@ -67,3 +67,7 @@ Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
 
 // /* DELETE /projects/1 (destroy */
 // Route::get('/projects/{project}/destroy', 'ProjectsController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
