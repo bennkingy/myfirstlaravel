@@ -41,20 +41,20 @@
 <h3>Add Task</h3>
 <div>
             
-    <form method="POST" action="/tasks/{{ $task->id }}">
+    <form method="POST" action="/projects/{{ $project->id }}/tasks">
 
         @method('POST')
 
         @csrf
 
-        <label for="completed" class="{{ $task->completed ? 'is-completed' : '' }}">
+        <label for="description">New Task</label>
 
-            <input type="checkbox" name="completed" onChange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
+        <input type="text" name="description" placeholder="New Task">
 
-            {{ $task->description }}
-            
-        </label>
+        <button type="submit">Add Task</button>
 
+        @include('errors')
+       
     </form>
 
 </div>
