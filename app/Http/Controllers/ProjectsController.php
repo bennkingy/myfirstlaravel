@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ProjectCreated;
 
 use App\Project;
 
@@ -44,7 +46,7 @@ class ProjectsController extends Controller
         
         $project = Project::create($attributes);
 
-        \Mail::to($project->owner->email)->send(
+        Mail::to($project->owner->email)->send(
             
             new ProjectCreated($project)
 
