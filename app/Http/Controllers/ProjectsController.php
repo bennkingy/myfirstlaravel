@@ -42,9 +42,9 @@ class ProjectsController extends Controller
 
         $attributes['owner_id'] = auth()->id();
         
-        Project::create($attributes);
+        $project = Project::create($attributes);
 
-        Mail::to($project->owner->email)->send(
+        \Mail::to($project->owner->email)->send(
             
             new ProjectCreated($project)
 

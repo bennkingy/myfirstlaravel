@@ -11,6 +11,8 @@ class ProjectCreated extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $project;
+
     /**
      * Create a new message instance.
      *
@@ -18,7 +20,7 @@ class ProjectCreated extends Mailable
      */
     public function __construct()
     {
-        //
+        $this->project = $project;
     }
 
     /**
